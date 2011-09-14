@@ -3,7 +3,7 @@ Python library for interacting with the Real Time Congress API.
 """
 
 __author__ = "Dan Drinkard <ddrinkard@sunlightfoundation.com"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __copyright__ = "Copyright (c) 2011 Sunlight Labs"
 __license__ = "BSD"
 
@@ -53,7 +53,8 @@ class RTC(object):
 
                     RTC.meta['page'] = responsejson['page']
                     RTC.meta['count'] = responsejson['count']
-                    return [RTCResponse(**bill) for bill in content]
+                    RTC.meta['raw_response'] = rsp.content
+                    return [RTCResponse(**obj) for obj in content]
 
                 except Exception as e:
                     raise RTCError('got %s: %s' % e.__class__.__name__, e)
