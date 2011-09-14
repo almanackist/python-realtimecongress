@@ -1,6 +1,4 @@
-"""
-Python library for interacting with the Real Time Congress API.
-"""
+""" Python library for interacting with the Real Time Congress API. """
 
 __author__ = "Dan Drinkard <ddrinkard@sunlightfoundation.com"
 __version__ = "0.1.1"
@@ -20,7 +18,7 @@ class RTCResponse(object):
         return '%s(%r)' % (self.__class__.__name__, self.__dict__)
 
 class RTCError(Exception):
-    """ Exception for API errors"""
+    """ Exception to wrap API errors """
 
 class RTC(object):
     apikey = None
@@ -53,7 +51,6 @@ class RTC(object):
 
                     RTC.meta['page'] = responsejson['page']
                     RTC.meta['count'] = responsejson['count']
-                    RTC.meta['raw_response'] = rsp.content
                     return [RTCResponse(**obj) for obj in content]
 
                 except Exception as e:

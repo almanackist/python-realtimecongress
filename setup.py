@@ -1,9 +1,10 @@
 from distutils.core import setup
+from realtimecongress import __version__
 
 long_description = open('README.md').read()
 
 setup(name="python-realtimecongress",
-      version="0.1.0",
+      version=__version__,
       py_modules=["realtimecongress"],
       description="A library for interacting with the Real Time Congress API",
       author="Dan Drinkard <dan.drinkard@gmail.com>",
