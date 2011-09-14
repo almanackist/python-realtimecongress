@@ -33,6 +33,10 @@ class RTC(object):
         if RTC.apikey is None:
             raise RTCError('Missing Sunlight apikey. Get one at services.sunlightlabs.com')
 
+        # json-scrub values for mongo queries; converts True to 'true', etc.
+        for key, val in enumerate(params):
+            params[key] = json.dumps(val)
+
         context = {
             'version': RTC.version,
             'format': RTC.format,
