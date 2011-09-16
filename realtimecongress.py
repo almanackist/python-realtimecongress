@@ -1,6 +1,6 @@
 """ Python library for interacting with the Real Time Congress API. """
 
-__author__ = "Dan Drinkard <ddrinkard@sunlightfoundation.com"
+__author__ = "Dan Drinkard <ddrinkard@sunlightfoundation.com>"
 __version__ = "0.1.1"
 __copyright__ = "Copyright (c) 2011 Sunlight Labs"
 __license__ = "BSD"
